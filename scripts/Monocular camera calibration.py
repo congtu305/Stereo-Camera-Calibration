@@ -46,3 +46,26 @@ print("Matrix:",mtx)
 print("dist:",dist)
 print("rvecs:",rvecs)
 print("tvecs:",tvecs)
+
+
+print("dumping the data into one files using numpy ")
+np.savez(
+    f"MultiMatrix",
+    camMatrix=mtx,
+    distCoef=dist,
+    rVector=rvecs,
+    tVector=tvecs,
+)
+
+print("-------------------------------------------")
+
+print("loading data stored using numpy savez function\n \n \n")
+
+data = np.load(f"MultiMatrix.npz")
+
+camMatrix = data["camMatrix"]
+distCof = data["distCoef"]
+rVector = data["rVector"]
+tVector = data["tVector"]
+
+print("loaded calibration data successfully")
