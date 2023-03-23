@@ -81,4 +81,4 @@ R1, R2, P1, P2, Q, _, _ = cv2.stereoRectify(
 )
 
 # Save calibration results to a file
-np.savez('calibration.npz', K_left=K_left, D_left=D_left, K_right=K_right, D_right=D_right, R=R, T=T, R1=R1, R2=R2, P1=P1, P2=P2, Q=Q)
+np.savez('calibration.npz', K_left=K_left, D_left=D_left, K_right=K_right, D_right=D_right, R=R, T=T, R1=R1, R2=R2, P1=P1, P2=P2, Q=Q, E=E, F=F)
